@@ -1,0 +1,54 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="container">
+  <div class="row mb-3">
+    <h3>Formulario de contacto</h3>
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Nombre:</label>
+    <div class="col-sm-12">
+      <input [(ngModel)]="nombre" type="text" class="form-control" id="colFormLabel" placeholder="Nombre y apellido">
+      <span>Introduzca su nombre y apellido</span>
+    </div>
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-12">
+      <input [(ngModel)]="email" type="email" class="form-control" id="colFormLabel" placeholder="ejemplo@dominio.com">
+      <span>Introduzca el email</span>
+    </div>
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Mensaje:</label>
+    <div class="col-sm-12">
+      <textarea [(ngModel)]="mensaje" class="form-control" id="validationTextarea" placeholder=""
+        required></textarea>
+        <span>Introduzca un mensaje</span>
+    </div>
+    <label for="colFormLabel" class="col-sm-2 col-form-label">2+3=?:</label>
+    <div class="col-sm-12">
+      <input [(ngModel)]="respuesta" type="text" class="form-control" id="colFormLabel" placeholder="Respuesta">
+        <span>Validacion anti-span</span>
+    </div>
+    <div class="col-12">
+      <button *ngIf="resp()" (click)="enviar()" class="btn btn-primary" type="submit">Enviar</button>
+    </div>
+    <br>
+    <div class="col-12" *ngIf="!resp()">
+      <span>Completa los campos para enviar</span>
+    </div>
+  </div>
+</div>
+
+<app-formcontacto [data]='form'></app-formcontacto>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
